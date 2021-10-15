@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+
+    <style>
+        /* 전체 틀 ------------------------------------------------- */
+        .box{ 
+            width:100%;
+            height:300px; 
+            margin-top:100px;
+            margin-bottom:300px;
+        }
+
+        .conbox{
+            position:relative; 
+            width:70%; 
+            top:20px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            background-color:rgb(243, 211, 174);
+            border-radius: 30px;
+        }
+        /* --------------------------------------------------------- */
+
+        .enrollTitle{
+            text-align: center;
+            margin-top: 30px;
+            color: rgb(241, 107, 27);
+        }
+
+        .enrollTable{
+            margin: auto;
+        }
+
+        .btnCancel, .btnEnroll{
+            text-align: center;
+        }
+
+        .basicProfile{
+            height: 200px;
+            width: 200px;
+        }
+
+        .inputText{
+            width: 250px;
+        }
+        
+        .rowLine{
+            text-align: center;
+        }
+        
+        .btnCancel, .btnEnroll{
+            margin-top: 15px;
+            height: 30px;
+            width: 170px;
+            background-color: transparent;
+            border-radius: 10px;
+        }
+
+        .btnCancel:hover, .btnEnroll:hover{
+            background-color:rgb(246, 189, 102);
+            color: white;
+        }
+
+        .btnArea{
+            margin-top: 50px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2 class="enrollTitle">회원가입</h2>
+        <div class="conbox">
+            <table class="enrollTable">
+                <tr>
+                    <td rowspan="4" colspan="2">
+                        <img class="basicProfile" src="../resources/images/basicprofile.png" alt="" >
+                    </td>
+                    <td colspan="3"></td>
+                    <td class="rowLine">아이디</td>
+                    <td><input type="text" class="inputText" placeholder="사용하실 ID를 적어주세요."></td>
+                    <td><input type="button" value="중복확인"</td>
+                </tr>
+                <br>
+                <tr>
+                    <td colspan="3"></td>
+                    <td class="rowLine">비밀번호</td>
+                    <td><input type="text" class="inputText" placeholder="사용하실 Password를 적어주세요."></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td class="rowLine">비밀번호확인</td>
+                    <td><input type="text" class="inputText" placeholder="Password를 한 번 더 입력해주세요."></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                    <td class="rowLine">이메일</td>
+                    <td><input type="text" class="inputText" placeholder="사용하실 이메일주소를 적어주세요."></td>
+                    <td>
+                        <select>
+                            <option>직접입력</option>
+                            <option>naver.com</option>
+                            <option>daum.net</option>
+                            <option>gmail.com</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input type="file" name="upfile" value="프로필 등록"/>
+                    </td>
+                    <td colspan="6"></td>
+                </tr>
+            </table>
+
+            <div class="btnArea">
+                <input type="reset" class="btnCancel" value="취소">
+                <input type="submit" class="btnEnroll" value="회원가입">
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

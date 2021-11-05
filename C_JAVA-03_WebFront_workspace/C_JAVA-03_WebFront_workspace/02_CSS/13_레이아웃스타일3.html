@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>여백 관련 속성</title>
+        <meta charset="UTF-8">
+        <style>
+            .test {
+                background: yellow;
+                width:100px;
+                height:100px;
+            }
+            .test1 { padding:100px; }
+            .test2 { padding-top:50px; padding-left:100px;}
+            .test3 { padding: 50px 30px;}
+            .test4 { padding: 0px 10px 50px; }
+
+            .test5 { margin: 50px; }
+            .test6 { margin: 0px 10px 50px; }
+        </style>
+    </head>
+    <body>
+        <h1>여백 관련 속성</h1>
+        <hr>
+        <h3>기준 div</h3>
+        <div class="test">콘텐츠영역</div>
+        <h2>padding</h2>
+        <p>테두리와 컨텐츠 영역 사이의 거리를 조절하는 속성<br>
+            padding : 전체;<br>
+            padding : 상하 좌우;<br>
+            padding : 상 좌우 하;<br>
+            padding : 상 우 하 좌;
+        </p>
+        <h3>상하좌우 전체 padding: 100px</h3>
+        <div class="test test1">콘텐츠영역</div>
+        <h3>위쪽: 50px, 왼쪽: 100px</h3>
+        <div class="test test2">콘텐츠영역</div>
+        <h3>상하: 50px, 좌우: 30px</h3>
+        <div class="test test3">콘텐츠영역</div>
+        <h3>하: 50px, 좌우: 10px, 상: 0px</h3>
+        <div class="test test4">콘텐츠영역</div>
+
+        <h2>margin</h2>
+        <p>요소들간의 간격을 조절하는 속성<br>
+            사용법은 padding과 동일
+        </p>
+        <h3>상하좌우 전체 margin: 50px</h3>
+        <div class="test test5">콘텐츠영역</div>
+        <h3>하: 50px, 좌우: 10px, 상: 0px</h3>
+        <div class="test test6">콘텐츠영역</div>
+    </body>
+</html>

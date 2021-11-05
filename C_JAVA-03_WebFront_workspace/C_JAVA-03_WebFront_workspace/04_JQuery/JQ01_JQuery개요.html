@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQuery 개요</title>
+        <meta charset="UTF-8">
+        <!-- JQuery 연결 1 -->
+        <!-- <script src="../resources/dev/jquery-3.6.0.min.js"></script> -->
+        <!-- JQuery 연결 2 -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>JQuery 개요</h1>
+        <p id="p1">
+            경량 Javascript 라이브러리<br>
+            복잡한 Javascript 코드를 손쉽게 구현하기 위해 개발됨
+        </p>        
+        <hr>
+
+        <h2>JQuery 장점</h2>
+        <p id="p2">
+            1. DOM과 관련된 처리를 쉽게 구현할 수 있음<br>
+            2. ajax통신, 이벤트 처리 등을 폭넓게 지원함<br>
+            3. 별도의 플러그인을 통해 차트, 슬라이드쇼, 테이블 등을 간단히 구현 가능
+        </p>
+        <hr>
+        <h2>JQuery 연결</h2>
+        <p id="p3">
+            1. head 요소안에 script 태그를 이용해서 JQuery 파일을 포함시켜줌<br>
+                - JQuery 홈페이지에서 .js 파일을 다운받아서 연결하는 방법<br>
+                - CDN(Content Delivery Network)를 통해 연결하는 방법<br>
+            2. script 태그 내에서 JQuery 문법으로 코드 작성
+        </p>
+        <script>
+            // javascript 코드
+            document.getElementById("p1").style.backgroundColor = "red";
+            // JQuery 코드
+            $("#p2").css("background-color","blue");
+        </script>
+
+        <hr>
+        <h2>#(document).ready()</h2>
+        <p id="p4">
+            페이지를 모두 로드한 후 ready 메소드를 실행<br>
+            자바스크립트의 document.onload 와 같은 개념의 메소드
+        </p>
+        <script>
+            // 사용법 1
+            jQuery(document).ready(function(){
+                $("#p3").css("background-color","green");
+            });
+            // 사용법 2
+            $(document).ready(function(){
+                $("#p4").css("background-color","orange");
+            });
+            // 사용법 3
+            $(function(){
+                $("p").css("color","white");
+            });
+        </script>
+    </body>
+</html>

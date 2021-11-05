@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>BOM</title>
+        <meta charset="UTF-8">
+        <style>
+            div {
+                height: 300px;
+                border: 1px solid black;
+                background-color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>BOM(Browser Object Model)</h1>
+        <hr>
+        <h2>screen 객체</h2>
+        <p>웹 브라우저 화면이 아닌 운영체제 화면의 속성을 가지는 객체</p>
+        <button onclick="test1();">실행 확인</button>
+        <div id="area1"></div>
+        <script>
+            function test1(){
+                var area1 = document.getElementById("area1");
+
+                area1.innerHTML += "화면 높이 : "+screen.height+"<br>";
+                area1.innerHTML += "화면 너비 : "+screen.width+"<br>";
+                area1.innerHTML += "실제 화면에서 사용 가능한 높이 : "+screen.availHeight+"<br>";
+                area1.innerHTML += "실제 화면에서 사용 가능한 너비 : "+screen.availWidth+"<br>";
+                area1.innerHTML += "사용 가능한 색상 수 : "+screen.colorDepth+"<br>";
+                area1.innerHTML += "한 픽셀당 비트 수 : "+screen.pixelDepth+"<br>";
+            }
+        </script>
+
+        <hr>
+        <h2>location 객체</h2>
+        <p>브라우저 주소 표시줄과 관련된 객체</p>
+        <button onclick="test2();">실행 확인</button>
+        <div id="area2"></div>
+        <script>
+            function test2(){
+                var area2 = document.getElementById("area2");
+
+                for(var key in location){
+                    area2.innerHTML += key + " : "+location[key]+"<br>";
+                }
+            }
+        </script>
+        <br>
+        <p>location.href='이동할 주소'</p>
+        <button onclick="location='http://www.naver.com'">네이버로 이동1</button>
+        <button onclick="location.href='http://www.naver.com'">네이버로 이동2</button>
+        <br><br>
+        <p>새로 고침</p>
+        <button onclick="location=location">새로고침1</button>
+        <button onclick="location.href=location.href">새로고침2</button>
+        <button onclick="location.href=location">새로고침3</button>
+        <button onclick="location=location.href">새로고침4</button>
+        <p>location.reload() 메소드는 현재 위치에서 새로고침</p>
+        <button onclick="location.reload();">새로고침5</button>
+        <br><br>
+        <p>새로운 페이지 로드</p>
+        <button onclick="location.assign('http://google.com');">구글1</button>
+        <button onclick="location.replace('http://google.com');">구글2</button>
+        <br><br>
+        <p>이전 페이지 이동 : history</p>
+        <button onclick="history.go(-1);">이전페이지1</button>
+        <button onclick="history.back();">이전페이지2</button>
+
+        <hr>
+        <h2>navigator 객체</h2>
+        <p>웹페이지를 실행하고 있는 브라우저에 대한 정보를 가지고 있는 객체</p>
+        <button onclick="test3();">실행 확인</button>
+        <div id="area3"></div>
+        <script>
+            function test3(){
+                var area3 = document.getElementById("area3");
+                for(var key in navigator){
+                    area3.innerHTML += key+" : "+navigator[key]+"<br>";
+                }
+            }
+        </script>
+    </body>
+</html>

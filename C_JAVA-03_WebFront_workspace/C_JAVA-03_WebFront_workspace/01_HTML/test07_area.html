@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>영역 관련 태그</title>
+    </head>
+    <body>
+        <h1>영역 관련 태그</h1>
+        <hr>
+
+        <h2>div 태그</h2>
+        <p>
+            HTML 문서에서 부분 또는 섹션을 정의하기 위한 블록 수준 요소<br>
+            주로 다른 HTML 요소의 컨테이너로 사용<br>
+            블록 수준 요소는 항상 새줄에서 시작하여 사용할 수 있는 전체 너비를 사용<br>
+            CSS로 스타일을 지정하거나, javascript로 조작할 수 있음
+        </p>
+
+        <h3>영역 지정 1 </h3>
+        <div style="border:1px solid">블럭 영역입니다.</div>
+        블럭 다음 내용
+
+        <h3>영역 지정 2 : 너비,높이 크기 지정</h3>
+        <div style="border:1px solid;width:300px;height:100px">블럭 영역입니다.</div>
+        참고 : 너비가 화면에 꽉차지 않아도 다음 내용은 아래로 내려옴
+
+        <h3>영역 지정 3 : 영역 내 글자 정렬</h3>
+        <div style="border:1px solid;text-align:center">내용 가운데 정렬</div>
+        <div style="border:1px solid;text-align:right">내용 오른쪽 정렬</div>
+
+        <h3>영역 지정 4 : 색상 지정하기</h3>
+        <div style="background-color:black;color:white">배경은 까만색, 글자는 흰색</div>
+
+        <hr>
+        <h2>span 태그</h2>
+        <p>
+            문서의 인라인 요소를 그룹화하는데 사용
+            CSS로 스타일을 지정하거나, JAVASCRIPT로 조작할 수 있음
+        </p>
+
+        <h3>영역 지정 1</h3>
+        <span style="border:1px solid">인라인 영역입니다.</span>
+        인라인 다음 내용
+
+        <h3>영역 지정 2</h3>
+        <span style="border:1px solid">인라인 영역</span>은 이렇게 다른 영역들 
+        <span style="border:1px solid">사이에</span> 같이 들어갑니다.
+
+        <h3>영역 지정 3 : 너비, 높이 크기 지정</h3>
+        <span style="border:1px solid;width:300px;height:100px">인라인 영역</span>
+        참고 : 인라인 영역은 기본적으로 크기 지정이 안됨
+
+        <h3>영역 지정 4 : inline-block</h3>
+        <p>
+            style 지정 시 display:inline-block 으로 설정<br>
+            인라인 속성은 기본 크기를 지정할 수 없지만, inline-block으로 변경하면 크기 지정 가능
+        </p>
+        <span style="border:1px solid;width:300px;height:100px;display:inline-block">인라인 블럭 영역</span>
+        인라인블럭 다음 내용
+    </body>
+</html>

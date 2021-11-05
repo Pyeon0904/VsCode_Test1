@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>테두리스타일</title>
+        <meta charset="UTF-8">
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                border-width: 3px;
+            }
+
+            .border-test1 { border-style: none; }
+            .border-test2 { border-style: dotted; }
+            .border-test3 { border-style: solid; }
+            .border-test4 { border-style: double; }
+            .border-test5 { border-style: dashed; }
+            .border-test6 { border-style: solid; border-width: 5px;}
+            .border-test7 { border-style: solid; border-color: blue;}
+            .border-test8 { border-style: solid; border-top-color: red;}
+            .border-test9 { border-style: solid;
+                border-top-left-radius: 50px;
+            }
+            .border-test10 { border-style:solid;
+                border-top-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+            }
+            .border-test11 { border-style:solid;
+                border-radius: 10px;
+            }
+            .border-test12 { border-style: solid;
+                box-shadow: 5px 5px 3px 2px gray;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>테두리스타일</h1>
+        <hr>
+        <h2>테두리 스타일 지정 : none(기본값)</h2>
+        <div class="border-test1"></div>
+        <h2>테두리 스타일 지정 : dotted</h2>
+        <div class="border-test2"></div>
+        <h2>테두리 스타일 지정 : solid</h2>
+        <div class="border-test3"></div>
+        <h2>테두리 스타일 지정 : double</h2>
+        <div class="border-test4"></div>
+        <h2>테두리 스타일 지정 : dashed</h2>
+        <div class="border-test5"></div>
+        
+        <h2>테두리 굵기 지정</h2>
+        <div class="border-test6"></div>
+
+        <h2>테두리 색상 지정 : 전체 색상</h2>
+        <div class="border-test7"></div>
+        <h2>테두리 색상 지정 : 위쪽 색상만 변경</h2>
+        <div class="border-test8"></div>
+
+        <h2>테두리 둥글게 지정 : 왼쪽위</h2>
+        <div class="border-test9"></div>
+        <h2>테두리 둥글게 지정 : 왼쪽위, 오른쪽아래</h2>
+        <div class="border-test10"></div>
+        <h2>테두리 둥글게 지정 : 전체</h2>
+        <div class="border-test11"></div>
+
+        <h2>테두리 그림자 지정</h2>
+        <div class="border-test12"></div>
+    </body>
+</html>

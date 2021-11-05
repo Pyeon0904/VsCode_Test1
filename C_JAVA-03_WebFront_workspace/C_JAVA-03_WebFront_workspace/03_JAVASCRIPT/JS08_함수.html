@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>함수</title>
+        <meta charset="UTF-8">
+        <style>
+            div { 
+                width: 500px; 
+                height: 100px;
+                background-color: lightgray;
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>함수(Function)</h1>
+        <hr>
+        <h2>함수 선언</h2>
+        <h3>선언적함수</h3>
+        <p>function 함수명() {소스코드}</p>
+        <button onclick="test1();">실행 확인</button>
+        <div id="div1"></div>
+        <script>
+            function test1(){
+                document.getElementById("div1").innerHTML = "test1() 함수 실행됨";
+            }
+        </script>
+
+        <h3>익명함수(이벤트 핸들러 작성시 주로 사용)</h3>
+        <p>함수명 = function(){소스코드 작성}</p>
+        <button onclick="test2();">실행 확인</button>
+        <div id="div2"></div>
+        <script>
+            var test2 = function(){
+                document.getElementById("div2").innerHTML = "test2() 함수 실행됨";
+            }
+        </script>
+
+        <h3>스스로 실행하는 함수</h3>
+        <p>(function(){ 소스코드 작성})();</p>
+        <div id="div3"></div>
+        <script>
+            // 문서 열고 바로 자동 실행됨
+            (function(){
+                document.getElementById("div3").innerHTML = "자동으로 혼자 실행됨..";
+            })();
+        </script>
+
+        <hr>
+        <h2>함수 호출</h2>
+        <h3>함수의 전달인자와 매개변수</h3>
+        <!-- <button id="btn1" onclick="test4('하이');">실행 확인</button> -->
+        <button id="btn1">실행 확인</button>
+        <div id="div4"></div>
+        <script>
+            function test4(var1){
+                document.getElementById("div4").innerHTML += "함수 호출됨 : "+var1+"<br>";
+            }
+
+            document.getElementById("btn1").onclick = function(){
+                test4('안녕');
+                // 지정된 매개변수 보다 많은 인자값을 넘겨주는 경우 초과되는 값은 무시됨
+                test4('하이하이','바이바이');
+                // 지정된 매개변수 보다 적은 인자값을 넘겨주는 경우 undefined
+                test4();
+            }
+        </script>
+
+        <h3>함수의 리턴처리</h3>
+        <button onclick="test5();">실행 확인</button>
+        <div id="div5"></div>
+        <script>
+            function refunc(){
+                return Math.floor(Math.random()*100) + 1;
+            }
+
+            function test5(){
+                // var var1 = refunc();
+                // document.getElementById("div5").innerHTML = var1;
+                document.getElementById("div5").innerHTML = refunc();
+            }
+        </script>
+
+        <h3>가변인자 함수 테스트</h3>
+        <button onclick="test6()">실행 확인</button>
+        <div id="div6"></div>
+        <script>
+            function sumAll(){
+                console.log("arguments 길이 : "+arguments.length);
+                console.log(arguments);
+                var d6 = document.getElementById("div6");
+                d6.innerHTML += "arguments 길이 : "+arguments.length+"<br>";
+                d6.innerHTML += "arguments 값 : "+arguments+"<br>";
+                
+                var sum = 0;
+                for(var i = 0; i<arguments.length; i++){
+                    sum += arguments[i];
+                }
+
+                d6.innerHTML += "합계 : "+sum+"<br>";
+
+            }
+
+            function test6(){
+                sumAll();
+                sumAll(10,20);
+                sumAll(10,20,30,40);
+            }
+        </script>
+
+        <h2>매개변수로 함수 전달</h2>
+        <h3>익명 함수를 매개변수로 활용</h3>
+        <div id="div7"></div>
+        <script>
+            function test7(varfunc){
+                document.getElementById("div7").innerHTML = "test7 함수 실행<br>";
+                varfunc();  // 매개변수로 받은 익명함수를 실행
+            }
+
+            // 함수 호출부 - 인자값으로 익명함수를 넘겨줌
+            test7(function(){
+                document.getElementById("div7").innerHTML += "인자 익명함수 실행<br>";
+            });
+        </script>
+
+        <h3>선언적 함수를 매개변수로 활용</h3>
+        <div id="div8"></div>
+        <script>
+            function test8(var1){
+                document.getElementById("div8").innerHTML += "test8 함수 실행<br>";
+                var1(); // 매개변수로 받은 함수 실행
+            }
+
+            function test9(){
+                document.getElementById("div8").innerHTML += "test9 함수 실행<br>";
+            }
+
+            // 함수 호출 - 인자값으로 다른 함수를 넘겨 줌
+            test8(test9);
+        </script>
+
+        <h3>익명 함수를 리턴하는 함수</h3>
+        <button onclick="test10()();">실행 버튼</button>
+        <div id="div9"></div>
+        <script>
+            function test10(){
+                document.getElementById("div9").innerHTML += "test10 함수 실행<br>";
+                return function(){
+                    document.getElementById("div9").innerHTML += "리턴 익명 함수 실행<br>";
+                };
+            }
+
+            // 실행 방법 1
+            // var func1 = test10();
+            // func1();
+            // 실행 방법 2
+            // test10()();
+            // 실행 방법 3
+            // 상단 button 태그 활용
+        </script>
+    </body>
+</html>

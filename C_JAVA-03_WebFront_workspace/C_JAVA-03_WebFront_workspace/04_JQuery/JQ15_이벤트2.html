@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>이벤트2 - 연결 메소드</title>
+        <meta charset="UTF-8">
+        <script src="../resources/dev/jquery-3.6.0.min.js"></script>
+        <style>
+            .outer {
+                width: 200px;
+                height: 200px;
+                background-color: orange;
+                padding: 50px;
+            }
+            .inner {
+                width: 200px;
+                height: 200px;
+                background-color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>이벤트 연결 메소드</h1>
+        <hr>
+        <h2>mouseenter(), mouseleave()</h2>
+        <p>
+            mouseenter() : 마우스가 요소에 들어올 때<br>
+            mouseover() : 마우스가 요소에 있을 때<br>
+            mouseleave() : 마우스가 요소에서 나갈 때
+        </p>
+        <div class="outer">
+            <div class="inner"></div>
+        </div>
+        <script>
+            $(function(){
+                //$('.outer').on('mouseenter',function(){});
+                $('.outer').mouseenter(function(){
+                    console.log("ENTER!!");
+                });
+                $('.outer').mouseover(function(){
+                    console.log("OVER!!");
+                });
+                $('.outer').mouseleave(function(){
+                    console.log("LEAVE!!");
+                });
+            });
+        </script>
+        <hr>
+        <h2>hover() 메소드</h2>
+        <p>mouseenter와 mouseleave를 동시에 사용하는 효과</p>
+        <h1 id="test1">hover 테스트</h1>
+        <script>
+            $(function(){
+                $('#test1').hover(function(){
+                    $(this).css({'background':'black','color':'white'});
+                },function(){
+                    $(this).css({'background':'white','color':'black'});
+                });
+            });
+        </script>
+    </body>
+</html>

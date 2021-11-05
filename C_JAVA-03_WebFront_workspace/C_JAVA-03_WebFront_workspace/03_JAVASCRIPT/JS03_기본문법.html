@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>기본문법</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>자바스크립트 기본문법</h1>
+        <hr>
+        <h2>변수</h2>
+        <script>
+            var1 = 10;
+            document.write(var1 + "<br>");
+            var var2 = 20;
+            document.write(var2 + "<br>");
+            var3 = var1 + var2;
+            document.write(var3 + "<br>");
+            var1 = "hello";
+            document.write(var1 + "<br>");
+            var2 = "bye";
+            document.write(var2 + "<br>");
+            var3 = var1 + var2;
+            document.write(var3 + "<br>");
+        </script>
+        <hr>
+        <h2>자료형 확인 : typeof</h2>
+        <script>
+            document.write("문자열1 : " + typeof("hello")+"<br>");
+            document.write("문자열2 : " + typeof('hihi')+"<br>");
+            document.write("문자열3 : " + typeof(var1)+"<br>");
+            document.write("숫자1 : "+ typeof(100)+"<br>");
+            document.write("숫자2 : "+ typeof(3.5)+"<br>");
+            document.write("숫자3 : "+ typeof(-200)+"<br>");
+            var3 = 10;
+            document.write("숫자4 : "+ typeof(var3)+"<br>");
+            document.write("참/거짓1 : "+ typeof(true)+"<br>");
+            document.write("참/거짓2 : "+ typeof(false)+"<br>");
+            var3 = true;
+            document.write("참/거짓3 : "+ typeof(var3)+"<br>");
+            document.write("초기값이 없는 변수 : "+ typeof(var4)+"<br>");
+        </script>
+        <hr>
+
+        <h2>문자열</h2>
+        <script>
+            str1 = "Hello";
+            document.write(str1.toUpperCase()+"<br>");
+            document.write(str1.toLowerCase()+"<br>");
+            document.write(str1.length+"<br>");
+            document.write(str1.indexOf('l')+"<br>");
+            document.write(str1.lastIndexOf('l')+"<br>");
+            document.write(str1.charAt(1)+"<br>");
+            document.write(str1.substring(1,4)+"<br>");
+            document.write(str1.split('')+"<br>");
+            str2 = "hi|bye|go";
+            document.write(str2.split('|')+"<br>");
+        </script>
+        <hr>
+
+        <h2>숫자</h2>
+        <script>
+            document.write("절대값1 : "+Math.abs(10)+"<br>");
+            document.write("절대값2 : "+Math.abs(-10)+"<br>");
+            document.write("랜덤값 : "+Math.random()+"<br>");  // 0 < random < 1
+            document.write("반올림1 : "+Math.round(3.56)+"<br>");
+            document.write("반올림2 : "+Math.round(3.46)+"<br>");
+            document.write("내림1 : "+Math.floor(3.56)+"<br>");
+            document.write("내림2 : "+Math.floor(3.46)+"<br>");
+            document.write("올림1 : "+Math.ceil(3.56)+"<br>");
+            document.write("올림2 : "+Math.ceil(3.46)+"<br>");
+        </script>
+        <hr>
+
+        <h2>데이터 형변환</h2>
+        <h3>숫자->문자열</h3>
+        <script>
+            document.write(typeof(10)+"<br>");
+            document.write(typeof("10")+"<br>");
+            num1 = 10;
+            document.write(typeof(num1)+"<br>");
+            document.write(typeof(String(num1))+"<br>");
+            document.write("Hello"+num1+"<br>");
+            document.write(20 + num1+"<br>");
+            document.write(20 + String(num1)+"<br>");
+        </script>
+        <h3>문자열 -> 숫자</h3>
+        <script>
+            str1 = "10";
+            document.write(typeof(str1)+"<br>");
+            document.write(typeof(Number(str1))+"<br>");
+            document.write(typeof(parseInt(str1))+"<br>");
+            document.write(typeof(parseFloat(str1))+"<br>");
+            document.write(Number(str1)+"<br>");
+            document.write(parseInt(str1)+"<br>");
+            document.write(parseFloat(str1)+"<br>");
+            str2 = "4.5";
+            document.write(Number(str2)+"<br>");
+            document.write(parseInt(str2)+"<br>");
+            document.write(parseFloat(str2)+"<br>");
+            document.write(20 + str1+"<br>");
+            document.write(20 + Number(str1)+"<br>");
+        </script>
+
+        <hr>
+        <h2>삼중 등호 연산자</h2>
+        <script>
+            // 자료형 상관없이 실제 데이터를 비교
+            if(10 == "10"){
+                document.write("숫자 10과 문자열 10은 == 같습니다.<br>");
+            }else {
+                document.write("숫자 10과 문자열 10은 != 다릅니다.<br>");
+            }
+            // 자료형까지 비교
+            if(10 === "10"){
+                document.write("숫자 10과 문자열 10은 === 같습니다.<br>");
+            }else {
+                document.write("숫자 10과 문자열 10은 !== 다릅니다.<br>");
+            }
+        </script>
+
+        <h2>문자열 연결 연산자</h2>
+        <script>
+            document.write("홍길동님 " + "환영합니다.<br>");
+            name = "김길동";
+            document.write(name+"님 환영합니다.<br>");
+        </script>
+    </body>
+</html>

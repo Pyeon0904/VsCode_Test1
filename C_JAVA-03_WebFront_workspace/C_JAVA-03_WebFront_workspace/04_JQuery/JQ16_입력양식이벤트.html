@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>입력 양식 이벤트</title>
+        <meta charset="UTF-8">
+        <script src="../resources/dev/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>입력 양식 이벤트</h1>
+        <hr>
+        <div id="wrap">
+            <h1 align="center">회원가입</h1>
+            <form action="#">
+                <table align="center">
+                    <tr>
+                        <th>이름</th>
+                        <td><input type="text" name="u_name" id="u_name"></td>
+                        <td id="nameresult"></td>
+                    </tr>
+                    <tr>
+                        <th>아이디</th>
+                        <td><input type="text" name="u_id" id="u_id"></td>
+                        <td id="idresult"></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호</th>
+                        <td><input type="password" name="u_pass1" id="u_pass1"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호확인</th>
+                        <td><input type="password" name="u_pass2" id="u_pass2"></td>
+                        <td id="passresult"></td>
+                    </tr>
+                    <tr>
+                        <th>이메일</th>
+                        <td><input type="email" name="u_mail" id="u_mail"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="가입">
+                            <input type="reset" value="초기화">
+                        </td>
+                        <td></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="result"></div>
+        <script>
+            $(function(){
+                // 이벤트 테스트
+                $('#u_name').focus(function(){
+                    console.log('focus이벤트발생');
+                }).focusin(function(){
+                    console.log('focusin이벤트발생');
+                }).focusout(function(){
+                    console.log('focusout이벤트발생');
+                }).blur(function(){
+                    console.log('blur이벤트발생');
+                }).change(function(){
+                    console.log('change이벤트발생');
+                }).select(function(){
+                    console.log('select이벤트발생');
+                });
+            });
+
+            // // submit 버튼 기능 재정의1 - click 이벤트 메소드
+            // $('input[type=submit]').click(function(){
+            //     $('#result').html("이름 : "+$('#u_name').val()+"<br>아이디 : "+$('#u_id').val());
+            // });
+            
+            // submit 버튼 기능 재정의2 - submit 이벤트 메소드
+            $('form').submit(function(){
+                $('#result').html("이름 : "+$('#u_name').val()+"<br>아이디 : "+$('#u_id').val());
+            });
+
+            // 비밀번호 확인 체크
+            $('#u_pass2').change(function(){
+                if($('#u_pass1').val() != $(this).val()){
+                    $('#passresult').html("비밀번호가 일치하지 않습니다.")
+                        .css('color','red');
+                    $(this).val('').select();
+                }else{
+                    $('#passresult').html("비밀번호 일치")
+                        .css('color','green');
+                }
+            });
+
+            // 이름 데이터 검사
+            $('#u_name').change(function(){
+                var regExp = /[가-힣]/;
+
+                if(!regExp.test($(this).val())){
+                    $("#nameresult").html('한글로 입력하세요').css('color','red');
+                    $(this).focus().css('background','red');
+                }else{
+                    $("#nameresult").html('정상입력').css('color','green');
+                    $(this).focus().css('background','white');
+                }
+            });
+        </script>
+    </body>
+</html>

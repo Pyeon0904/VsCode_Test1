@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS 개념</title>
+        <meta charset="UTF-8">
+
+        <!-- 외부 CSS  파일 가져오기 -->
+        <link rel="stylesheet" type="text/css" href="00_css01.css">
+    </head>
+    <body>
+        <h1>CSS(Cascading Style Sheet)</h1>
+        <p>
+            HTML 문서의 스타일을 설명하는 언어<br>
+            HTML 컨텐츠가 화면에 어떻게 표시 될 것인지를 나타내는 규약
+        </p>
+
+        <hr>
+        <h2>CSS 사용 방법 1</h2>
+        <p>인라인 스타일 : 각 요소의 style 속성으로 지정</p>
+        <div style="background-color: blue;">영역</div>
+
+        <h2>CSS 사용 방법 2</h2>
+        <p>내부 스타일 시트 : style 태그로 지정</p>
+        <div id="css2">영역2</div>
+        <style>
+            #css2 { background-color: red;}
+        </style>
+
+        <h2>CSS 사용 방법 3</h2>
+        <p>외부 스타일 시트 : 별도의 .css 파일을 생성해서 지정<br>
+            head 에 link 태그를 이용해서 파일을 불러와야 적용됨
+        </p>
+        <div id="css3">영역3</div>
+        
+        <hr>
+        <h2>CSS 적용 우선순위</h2>
+        <p>
+            1. 인라인 스타일<br>
+            2. 내부스타일시트 == 외부스타일시트(마지막으로 읽은 스타일 적용)<br>
+            3. 브라우저 기본값
+        </p>
+
+        <hr>
+        <h2>CSS Syntax(형식)</h2>
+        <p>
+            <h3>Selector { Property : Value; [...] }</h3>
+            Selector(선택자) : 스타일을 적용할 HTML 요소를 지정<br>
+            Property(속성) : 적용할 CSS 속성<br>
+            Value(값) : 속성에 적용할 값
+        </p>
+
+    </body>
+</html>

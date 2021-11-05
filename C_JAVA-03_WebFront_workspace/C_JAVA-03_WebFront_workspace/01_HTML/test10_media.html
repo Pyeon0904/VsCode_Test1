@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>멀티미디어 관련 태그</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>멀티미디어 관련 태그</h1>
+        <hr>
+
+        <h2>이미지 태그(img)</h2>
+        <p>
+            웹 페이지에 사진이나 그림을 삽입할 때 사용하는 태그<br>
+            이미지는 기술적으로 HTML 페이지에 삽입 되지 않음<br>
+            링크를 이용해 이미지파일을 별도로 가져와 표시해줌
+        </p>
+
+        <h3>이미지 삽입1 : 다른 사이트 이미지 주소 복사</h3>
+        <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png">
+
+        <h3>이미지 삽입2 : 이미지 파일을 서버에 저장</h3>
+        <p>서버의 특정 경로에 이미지 파일 저장 : resources/images/kh_logo.jpg</p>
+        <img src="../resources/images/kh_logo.jpg">
+
+        <h3>이미지 삽입3 : 이미지 설명 텍스트 지정</h3>
+        <p>이미지가 제대로 표시되지 않는 경우에만 텍스트 표시됨</p>
+        <img src="" alt="KH로고이미지">
+
+        <h3>이미지 삽입4 : 이미지 크기 지정</h3>
+        <img src="../resources/images/kh_logo.jpg" width="300" height="300">
+
+        <hr>
+        <h2>map 태그</h2>
+        <p>
+            이미지를 구역별로 나누어 링크를 걸어주는 태그<br>
+            영역을 지정하는 별도의 map을 만들어 놓고 img 태그에서 해당 map을 지정(usemap속성)해서 사용
+        </p>
+
+        <h3>이미지에 링크 지정</h3>
+        <img src="../resources/images/kh_logo.jpg" usemap="#maptest">
+        <map name="maptest">
+            <area shape="rect" coords="0,0,40,36" href="http://www.iei.or.kr">
+            <area shape="rect" coords="40,0,164,36" href="test08_semantic.html" target="_blank">
+        </map>
+
+        <hr>
+        <h2>오디오 태그(audio)</h2>
+        <p>웹 브라우저에서 플러그인의 도움없이 음악을 재생할 수 있게 만들어주는 태그</p>
+        <audio src="../resources/audio/ChittyChittyBangBang_이승윤.mp3" controls autoplay loop>
+            웹브라우저가 audio태그를 지원하지 않을 때 표시할 문구
+        </audio>
+
+        <hr>
+        <h2>비디오 태그(video)</h2>
+        <p>웹 브라우저에서 플러그인의 도움없이 미디어를 재생할 수 있게 만들어주는 태그</p>
+        <h3>동영상 재생 : 컨트롤 표시(controls)</h3>
+        <video src="../resources/video/video1.mp4" controls>
+            웹브라우저가 video 태그를 지원하지 않을 때 표시할 문구
+        </video>
+
+        <h3>동영상 재생 : 재생 전 출력할 이미지 지정(poster), 크기지정(width/height)</h3>
+        <video src="../resources/video/video1.mp4" controls 
+                    poster="../resources/images/kh_logo.jpg" width="300px">
+            영상을 지원하지 않습니다.</video>
+    </body>
+</html>

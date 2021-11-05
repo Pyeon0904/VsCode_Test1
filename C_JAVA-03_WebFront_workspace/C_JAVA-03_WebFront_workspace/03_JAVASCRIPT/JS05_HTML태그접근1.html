@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML태그 접근</title>
+    </head>
+    <body>
+        <h1>HTML 태그 접근</h1>
+        <hr>
+        <h2>테스트용 데이터(요소들)</h2>
+        <div id="d1">
+            <h3 id="dh1" class="d1class">div1영역입니다.</h3>
+            <p id="dp1" class="d1class" name="pp"><b>안녕하세요.(div1)</b></p>
+        </div>
+        <div id="d2">
+            <h3 id="dh2">div2영역입니다.</h3>
+            <p id="dp2" name="pp">반갑습니다.(div2)</p>
+        </div>
+        <hr>
+        <h2>getElementById</h2>
+        <p>HTML 태그의 id속성 값을 이용해 요소 객체의 정보를 가져옴</p>
+        <script>
+            var1 = document.getElementById("d1");
+            document.write("d1 아이디 요소 : "+var1+"<br>");
+            var2 = document.getElementById("dh1");
+            document.write("dh1 아이디 요소 : "+var2+"<br>");
+            var3 = document.getElementById("dp1");
+            document.write("dp1 아이디 요소 : "+var3+"<br>");
+            // 요소 내부 데이터 가져오기
+            document.write("d1 아이디 요소의 내부 데이터(HTML태그 포함) : "+var1.innerHTML);
+            document.write("d1 아이디 요소의 내부 데이터(HTML태그 미포함) : "+var1.innerText);
+        </script>
+        <hr>
+        <h2>getElementsByName</h2>
+        <p>HTML 태그의 name속성값을 이용해 요소 객체들의 정보를 배열에 담아 가져옴</p>
+        <script>
+            var4 = document.getElementsByName("pp");
+            document.write("pp이름 요소들 : "+var4+"<br>");
+            document.write("0번째 pp 이름 요소 : "+var4[0]+"<br>");
+            document.write("1번째 pp 이름 요소 : "+var4[1]+"<br>");
+            document.write("0번째 pp 이름 요소 내부 데이터 : "+var4[0].innerHTML+"<br>");
+            document.write("1번째 pp 이름 요소 내부 데이터 : "+var4[1].innerHTML+"<br>");
+        </script>
+
+        <hr>
+        <h2>getElementsByTagName</h2>
+        <p>HTML 태그명을 이용해 요소 객체들의 정보를 배열에 담아 가져옴</p>
+        <script>
+            var5 = document.getElementsByTagName("h3");
+            document.write("h3 태그 요소들 : "+var5+"<br>");
+            document.write("0번째 h3 태그 요소 : "+var5[0]+"<br>");
+            document.write("1번째 h3 태그 요소 : "+var5[1]+"<br>");
+            document.write("0번째 h3 태그 요소 내부 데이터 : "+var5[0].innerHTML+"<br>");
+            document.write("1번째 h3 태그 요소 내부 데이터 : "+var5[1].innerHTML+"<br>");
+        </script>
+
+        <hr>
+        <h2>getElementsByClassName</h2>
+        <p>HTML 태그의 class 속성 값을 이용해 요소 객체들의 정보를 배열에 담아 가져옴</p>
+        <script>
+            var6 = document.getElementsByClassName("d1class");
+            document.write("d1class 클래스 요소들 : "+var6+"<br>");
+            document.write("0번째 d1class 클래스 요소 : "+var6[0]+"<br>");
+            document.write("1번째 d1class 클래스 요소 : "+var6[1]+"<br>");
+            document.write("0번째 d1class 클래스 요소 내부 데이터 : "+var6[0].innerHTML+"<br>");
+            document.write("1번째 d1class 클래스 요소 내부 데이터 : "+var6[1].innerHTML+"<br>");
+            document.write("요소 개수 알아내기 : " + var6.length);
+        </script>
+
+        <hr>
+        <h2>HTML 요소의 값 변경</h2>
+        <div id="d3">원래 데이터입니다.</div>
+        <script>
+            var7 = document.getElementById("d3");
+            document.write("d3 변경 전 : "+var7.innerHTML+"<br>");
+            var7.innerHTML = "바껴라 얍~!!";
+            document.write("d3 변경 후 : "+var7.innerHTML+"<br>");
+        </script>
+    </body>
+</html>

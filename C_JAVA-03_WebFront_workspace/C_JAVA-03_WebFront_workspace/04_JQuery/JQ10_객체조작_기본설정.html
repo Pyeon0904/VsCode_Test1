@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>객체조작1</title>
+        <meta charset="UTF-8">
+        <script src="../resources/dev/jquery-3.6.0.min.js"></script>
+        <style>
+            .high_light_0 { background: yellow;}
+            .high_light_1 { background: orange;}
+            .high_light_2 { background: blue;}
+            .high_light_3 { background: green;}
+            .high_light_4 { background: red;}
+            #area1 {
+                height: 200px;
+                border: 1px solid black;
+                background-color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>객체 조작 - 기본설정 메소드</h1>
+        <hr>
+        <h2>each() 메소드</h2>
+        <p>배열을 관리하는 for in문과 비슷한 메소드로 객체나 배열의 요소를 검사</p>
+        <div id="wrap">
+            <h1>item-0</h1>
+            <h1>item-1</h1>
+            <h1>item-2</h1>
+            <h1>item-3</h1>
+            <h1 id="item4">item-4</h1>
+        </div>
+        <script>
+            $(function(){
+                // .each() 안쓰고 선택자로만 지정
+                // $('#wrap h1:eq(0)').addClass('high_light_0');
+                // $('#wrap h1:eq(1)').addClass('high_light_1');
+                // $('#wrap h1:eq(2)').addClass('high_light_2');
+                // $('#wrap h1:eq(3)').addClass('high_light_3');
+                // $('#wrap h1:eq(4)').addClass('high_light_4');
+
+                // .each()메소드로 지정
+                $('#wrap').children().each(function(index,item){
+                    // 문서 객체에 class 속성 추가
+                    $(this).addClass('high_light_'+index);
+                    // 문서 객체에 class 속성 제거
+                    if(index == 2){
+                        $(this).removeClass('high_light_'+index);
+                    }
+                });
+
+                // 문서 객체에 class 속성을 추가/제거(추가되어 있으면 제거, 제거되어 있으면 추가)
+                $('#item4').click(function(){
+                    $(this).toggleClass('high_light_4');
+                });
+            });
+        </script>
+
+        <hr>
+        <h2>extend() 메소드</h2>
+        <p>객체에 속성을 추가하거나, 여러 개의 객체를 하나로 합칠 때 사용</p>
+        <div id="area1"></div>
+        <script>
+            $(function(){
+                var obj1 = {name:'홍길동',age:'20'};
+                var obj2 = {name:'김길동',hobby:['게임','영화']};
+                console.log(obj1);
+                console.log(obj2);
+
+                // 객체에 속성 추가
+                $.extend(obj1,{job:'학생'});
+                console.log(obj1);
+
+                // 두 객체를 하나로 합칠 때 사용
+                    // 중복되는 객체의 속성은 나중의 것으로 덮어 씀
+                var obj3 = $.extend(obj1,obj2);
+                console.log(obj3);
+            });
+        </script>
+    </body>
+</html>

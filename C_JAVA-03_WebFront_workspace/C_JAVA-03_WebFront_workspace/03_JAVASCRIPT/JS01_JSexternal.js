@@ -1,0 +1,1 @@
+document.write('외부 파일 코드 입니다.');

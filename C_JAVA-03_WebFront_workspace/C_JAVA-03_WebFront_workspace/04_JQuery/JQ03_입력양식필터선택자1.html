@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>입력양식필터선택자1</title>
+        <meta charset="UTF-8">
+        <script src="../resources/dev/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function(){
+                $('input:text').css("background-color","red");
+                $('input:button').attr('value','왕버튼').css('width','200px')
+                    .css('height','50px');
+                $('input:checkbox').attr('checked',true)
+                    .css({'width':'50px','height':'50px'});
+                $('input:file').css('background','yellowgreen');
+                $('input:image').mouseenter(function(){
+                    $(this).attr('src','../resources/images/kh_logo.jpg');
+                });
+                $('input:image').mouseout(function(){
+                    $(this).attr('src','../resources/images/iconsample.PNG');
+                });
+                $('input:password').css('background','yellow');
+                $('input:radio').attr('checked',true);
+                $('input:reset').css({'background':'blue','color':'white'});
+                $('input:submit').css({'background':'purple','color':'white'}).attr('value','전송');
+            });
+        </script>
+    </head>
+    <body>
+        <h1>입력 양식 필터 선택자1</h1>
+        <p>input 태그의 type 속성에 따라 문서 객체 선택</p>
+        <hr>
+        텍스트 상자 : <input type="text"><br>
+        버튼 상자 : <input type="button"><br>
+        체크박스 : <input type="checkbox"><br>
+        파일 : <input type="file"><br>
+        이미지 : <input type="image" src="../resources/images/iconsample.PNG"><br>
+        패스워드 상자 : <input type="password"><br>
+        라디오 버튼 : <input type="radio"><br>
+        리셋 버튼 : <input type="reset"><br>
+        submit 버튼 : <input type="submit"><br>        
+    </body>
+</html>

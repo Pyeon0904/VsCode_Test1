@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>입력양식 필터 선택자2</title>
+        <meta charset="UTF-8">
+        <script src="../resources/dev/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>입력 양식 필터 선택자2</h1>
+        <p>입력양식의 상태에 따라 선택해주는 방법</p>
+        <hr>
+        <h2>checkbox의 상태에 대한 선택자</h2>
+        <label>취미 : </label>
+        <input type="checkbox" name="hobby" value="game" id="game">
+        <label for="game">게임</label>
+        <input type="checkbox" name="hobby" value="movie" id="movie">
+        <label for="movie">영화</label>
+        <input type="checkbox" name="hobby" value="music" id="music">
+        <label for="music">음악</label>
+        <script>
+            $(function(){
+                $('input:checkbox').change(function(){
+                    if($(this).prop('checked')){
+                        $(this).css({'width':'50px','height':'50px'});
+                    }else{
+                        $(this).css({'width':'15px','height':'15px'});
+                    }
+                });
+            });
+        </script>
+        <hr>
+        <h2>select > option 태그의 상태에 대한 선택자</h2>
+        <select id="national">
+            <option value="한국">한국</option>
+            <option value="미국" selected>미국</option>
+            <option value="중국">중국</option>
+            <option value="일본">일본</option>
+        </select>
+        <label>선택한 나라 : </label><input type="text" id="result">
+        <script>
+            $(function(){
+                $('#national').change(selectChange);
+            });
+            // 별도의 함수 만들기
+            function selectChange(){
+                var value = $('option:selected').val();
+                $('#result').val(value);
+            }
+        </script>
+
+        <hr>
+        <h2>input 상태에 대한 선택자</h2>
+        활성화 텍스트 상자 : <input type="text"><br>
+        비 활성화 텍스트 상자 : <input type="text" disabled><br>
+        활성화 버튼 : <input type="button" value="활성화"><br>
+        비 활성화 버튼 : <input type="button" value="비활성화" disabled>
+        <script>
+            $(function(){
+                $('input:enabled').css('background','yellowgreen');
+                $('input:disabled').css('background','gray');
+            });
+        </script>
+
+        <hr>
+        <h2>필터 선택자</h2>
+        <table id="t1">
+            <tr><th>이름</th><th>혈액형</th><th>지역</th></tr>
+            <tr><td>홍길동</td><td>A형</td><td>인천</td></tr>
+            <tr><td>이길동</td><td>O형</td><td>서울</td></tr>
+            <tr><td>최길동</td><td>AB형</td><td>경기도</td></tr>
+            <tr><td>박길동</td><td>B형</td><td>서울</td></tr>
+            <tr><td>정길동</td><td>A형</td><td>강원도</td></tr>
+            <tr><td>하길동</td><td>O형</td><td>경상도</td></tr>
+            <tr><td colspan="2">총원</td><td>6명</td></tr>
+        </table>
+        <script>
+            $(function(){
+                // 홀수번째 요소들(인덱스 0부터 시작됨)
+                $('#t1 tr:odd').css('background','lightgray');
+                // 짝수번째 요소들
+                $('#t1 tr:even').css('background','gray');
+
+                // 첫번째 요소
+                $('#t1 tr:first').css('background','black').css('color','white');
+                // 마지막 요소
+                $('#t1 tr:last').css({'background':'orangered','color':'white'});
+            });
+        </script>
+
+        <hr>
+        <h2>함수 형태의 필터 선택자</h2>
+        <table id="t2">
+            <tr><th>이름</th><th>혈액형</th><th>지역</th></tr>
+            <tr><td>홍길동</td><td>A형</td><td>인천</td></tr>
+            <tr><td>이길동</td><td>O형</td><td>서울</td></tr>
+            <tr><td>최길동</td><td>AB형</td><td>경기도</td></tr>
+            <tr><td>박길동</td><td>B형</td><td>서울</td></tr>
+            <tr><td>정길동</td><td>A형</td><td>강원도</td></tr>
+            <tr><td>하길동</td><td>O형</td><td>경상도</td></tr>
+            <tr><td colspan="2">총원</td><td>6명</td></tr>
+        </table>
+        <script>
+            $(function(){
+                // eq(n) : n번째 위치하는 객체 선택(인덱스는 0번부터 시작)
+                $('#t2 tr:eq(0)').css({'background':'blue','color':'white'});
+
+                // nth-child(n) : 수열번 째 위치하는 객체 선택
+                $('#t2 tr:nth-child(2n)').css('background','yellowgreen');
+                $('#t2 td:nth-child(3n)').css('background','orange');
+
+                // gt(n) : n번째를 초과하는 객체 선택
+                $('#t2 tr:gt(4)').css('color','red');
+                // lt(n) : n번째 미만에 위치하는 객체 선택
+                $('#t2 tr:lt(4)').css('font-size','1.5em');
+
+                // contains('문자열') : 특정 문자열을 포함하는 객체 선택
+                $('#t2 td:contains("인천")').css('color','white');
+
+                // not(선택자) : 선택자와 일치하지 않는 객체 선택
+                $('#t2 td:not(:contains("홍길동"))').css('font-family','궁서');
+            });
+        </script>
+    </body>
+</html>

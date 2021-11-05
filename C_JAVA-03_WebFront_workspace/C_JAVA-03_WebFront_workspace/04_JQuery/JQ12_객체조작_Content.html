@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>객체조작3</title>
+        <meta charset="UTF-8">
+        <script src="../resources/dev/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>객체조작 - Content 메소드</h1>
+        <hr>
+        <h2>html() 메소드</h2>
+        <h1 id="test1"><a>네이버로 이동</a></h1>
+        <h1 id="test2"></h1>
+        <button onclick="test1();">실행확인1</button>
+        <script>
+            function test1(){
+                // 요소 내 HTML 가져오기
+                var temp = $('#test1').html();
+                console.log(temp);
+
+                // 요소에 HTML 설정
+                $('#test2').html(temp);
+
+                $('#test2').children('a').attr('href','http://www.naver.com');
+            }
+        </script>
+
+        <div class="test"></div>
+        <div class="test"></div>
+        <div class="test"></div>
+        <button onclick="test2()">실행확인2</button>
+        <script>
+            function test2(){
+                // 함수를 이용해서 각 요소에 index, text 활용
+                $('.test').html(function(index,html){
+                    $(this).html("<h1>test"+index+"</h1>");
+                    console.log(index,html);
+                });
+            }
+        </script>
+
+        <h2>text() 메소드</h2>
+        <h1 id="ttest1"><a>구글로 이동</a></h1>
+        <h1 id="ttest2"></h1>
+        <button onclick="ttest1();">실행확인1</button>
+        <script>
+            function ttest1(){
+                // 요소 내 텍스트 가져오기
+                var temp = $('#ttest1').text();
+                console.log(temp);
+
+                // 요소 내 텍스트 설정
+                $('#ttest2').text(temp);
+            }
+        </script>
+        <div class="ttest"></div>
+        <div class="ttest"></div>
+        <div class="ttest"></div>
+        <button onclick="ttest2();">실행확인2</button>
+        <script>
+            function ttest2(){
+                // 함수를 이용해서 각 요소에 index, text 활용
+                $('.ttest').text(function(index,text){
+                    console.log(index,text);
+                    $(this).text("<h1>test"+index+"</h1>");
+                });
+            }
+        </script>
+    </body>
+</html>

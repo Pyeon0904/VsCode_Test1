@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>객체조작2</title>
+        <meta charset="UTF-8">
+        <script src="../resources/dev/jquery-3.6.0.min.js"></script>
+        <style>
+            .first { color: red;}
+            .second { color: blue; }
+            .third { color: orange; }
+        </style>
+    </head>
+    <body>
+        <h1>객체 조작 - 속성설정</h1>
+        <hr>
+        <h2>attr() 메소드</h2>
+        <p>문서 객체의 특정 속성값을 알아내거나 속성을 추가할 때 사용</p>
+        <img id="img1" src="../resources/images/city1.PNG" width="400px" height="300px">
+        <button onclick="test1();">실행확인</button>
+        <script>
+            function test1(){
+                // 속성명에 해당하는 속성 값을 리턴
+                var img1 = $('#img1').attr('src');
+                console.log('사진 경로 : '+img1);
+
+                // 속성명에 해당하는 속성 값 변경
+                $('#img1').attr('src','../resources/images/flower2.PNG');
+
+                // 함수를 통해 인덱스와 value를 활용
+                $('#img1').attr('src',function(index,value){
+                    console.log(index,value);
+                });
+
+                // 객체를 통해 여러 속성을 설정
+                $('#img1').attr({'width':'100px','height':'50px'});
+
+                // 객체의 속성 제거
+                $('#img1').removeAttr('width');
+            }
+        </script>
+
+        <hr>
+        <h2>css() 메소드</h2>
+        <p>문서 객체의 스타일을 검사하거나 변경할 때 사용</p>
+        <h1 class="first">test-0</h1>
+        <h1 class="second">test-1</h1>
+        <h1 class="third">test-2</h1>
+        <button onclick="test2()">실행확인</button>
+        <script>
+            function test2(){
+                // 속성명에 해당하는 속성 값 리턴
+                var color1 = $('.first').css('color');
+                console.log(color1);
+
+                // 속성명에 해당하는 속성 값 변경
+                $('.first').css('color','green');
+
+                // 함수를 통해 인덱스와 value를 활용
+                $('h1').css('color',function(index,value){
+                    console.log(index,value);
+                });
+
+                // 객체를 통해 여러 속성 설정
+                $('.second').css({'color':'white','background':'orange'});
+
+                // 속성 제거
+                $('.third').css('color','inherit');
+            }
+        </script>
+    </body>
+</html>

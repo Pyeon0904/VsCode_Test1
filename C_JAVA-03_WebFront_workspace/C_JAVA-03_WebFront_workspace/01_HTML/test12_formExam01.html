@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>폼 태그 실습1</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form method="GET" action="test12_form1.html">
+            <fieldset>
+                <legend>납품자 정보</legend>
+                <ol>
+                    <li><lable for="u_name">납품자명 : </lable>
+                    <input type="text" name="u_name" placeholder="ex) 홍길동"></li>
+                    <br>
+                    <li><label for="u_mail">email : </label>
+                    <input type="email" name="u_mail" placeholder="ex)ex@ex.com"></li>
+                    <br>
+                    <li><label for="u_home">홈페이지 : </label>
+                    <input type="url" name="u_home" placeholder="http://"></li>
+                </ol>
+            </fieldset>
+
+            <fieldset>
+                <legend>납품 정보</legend>
+                <ul>
+                    <li><label for="p_name">상품명 : </label>
+                    <input type="text" name="p_name"></li>
+                    <br>
+                    <li><label for="p_count">납품수량 : </label>
+                    <input type="number" name="p_count" placeholder="최소100" min="100"></li>
+                    <br>
+                    <li><label for="p_grade">납품등급 : </label>
+                    <input type="range" name="p_grade" min="0" max="10" value="6"></li>
+                    <br>
+                    <li><label for="p_etc">기타사항 : </label>
+                    <textarea name="p_etc"></textarea></li>
+                </ul>
+            </fieldset>
+            <br>
+            <input type="submit" value="send message">
+            <input type="reset" value="reset">
+        </form>
+    </body>
+</html>

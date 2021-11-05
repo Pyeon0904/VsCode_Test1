@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>내장 객체</title>
+        <meta charset="UTF-8">
+        <style>
+            div {
+                height: 300px;
+                border:1px solid black;
+                background-color: lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>내장 객체</h1>
+        <hr>
+        <h2>String객체의 HTML 관련 메소드</h2>
+        <button onclick="test1();">실행 확인</button>
+        <div id="area1"></div>
+        <script>
+            function test1(){
+                // String  객체 생성
+                var str1 = "javascript";
+                var str2 = new String("javascript");
+
+                var area1 = document.getElementById("area1");
+
+                area1.innerHTML = "str1 기본값 : "+str1+"<br>";
+                area1.innerHTML += "str2 기본값 : "+str2+"<br>";
+
+                area1.innerHTML += "anchor() : "+str1.anchor()+"<br>";
+                area1.innerHTML += "big() : "+str1.big()+"<br>";
+                area1.innerHTML += "bold() : "+str1.bold()+"<br>";
+                area1.innerHTML += "fontcolor('red') : "+str1.fontcolor('red')+"<br>";
+                area1.innerHTML += "fontsize(20) : "+str1.fontsize(10)+"<br>";
+                area1.innerHTML += "italics() : "+str1.italics()+"<br>";
+                area1.innerHTML += "link() : "+str1.link('http://www.naver.com')+"<br>";
+                area1.innerHTML += "small() : "+str1.small()+"<br>";
+                area1.innerHTML += "strike() : "+str1.strike()+"<br>";
+                area1.innerHTML += "sub() : "+str1.sub()+"<br>";
+                area1.innerHTML += "sup() : "+str1.sup()+"<br>";
+            }
+        </script>
+
+        <hr>
+        <h2>Number 객체</h2>
+        <button onclick="test2();">실행 확인</button>
+        <div id="area2"></div>
+        <script>
+            function test2(){
+                // Number 객체 생성
+                var num1 = 123.456789;
+                var num2 = 123;
+                var num3 = new Number(1234);
+
+                var area2 = document.getElementById("area2");
+
+                area2.innerHTML = "num1의 기본값 : "+num1+"<br>";
+                area2.innerHTML += "num2의 기본값 : "+num2+"<br>";
+                area2.innerHTML += "num3의 기본값 : "+num3+"<br>";
+
+                // 숫자를 지수형태로 표시
+                area2.innerHTML += "num1.toExponential() : "+num1.toExponential()+"<br>";
+                area2.innerHTML += "num2.toExponential() : "+num2.toExponential()+"<br>";
+                // 숫자를 고정 소수점형태로 표시
+                area2.innerHTML += "num1.toFixed() : "+num1.toFixed()+"<br>";
+                area2.innerHTML += "num2.toFixed() : "+num2.toFixed()+"<br>";
+                area2.innerHTML += "num1.toFixed(2) : "+num1.toFixed(2)+"<br>";
+                area2.innerHTML += "num2.toFixed(2) : "+num2.toFixed(2)+"<br>";
+                // 숫자 길이에 따라 지수, 고정소수점 알아서 표시
+                area2.innerHTML += "num1.toPrecision() : "+num1.toPrecision()+"<br>";
+                area2.innerHTML += "num2.toPrecision() : "+num2.toPrecision()+"<br>";
+
+                // Number 속성
+                area2.innerHTML += "Number.MAX_VALUE : "+Number.MAX_VALUE+"<br>";
+                area2.innerHTML += "Number.MIN_VALUE : "+Number.MIN_VALUE+"<br>";
+                area2.innerHTML += "Number.NaN : "+Number.NaN+"<br>";
+                area2.innerHTML += "Number.POSITIVE_INFINITY : "+Number.POSITIVE_INFINITY+"<br>";
+                area2.innerHTML += "Number.NEGATIVE_INFINITY : "+Number.NEGATIVE_INFINITY+"<br>";
+            }
+        </script>
+
+        <hr>
+        <h2>Date 객체</h2>
+        <button onclick="test3();">실행 확인</button>
+        <div id="area3"></div>
+        <script>
+            function test3(){
+                // Date 객체 생성
+                var date1 = new Date();
+                var date2 = new Date("January 15"); // 월 일
+                var date3 = new Date('January 15, 2020');   // 월 일, 년도
+                var date4 = new Date('January 15, 2020 15:20:20');  // 월 일, 년도 시간
+                var date5 = new Date(2019,3,15,19,25,30);
+                    // new Date(년,월[,일,시,분,초,밀리초]);
+                        // 년도 : 0~99까지는 1900~1999로 처리됨
+                        // 월 : 0부터 시작
+                
+                var area3 = document.getElementById("area3");
+
+                area3.innerHTML = "Date() : "+date1+"<br>";
+                area3.innerHTML += "Date('January 15') : "+date2+"<br>";
+                area3.innerHTML += "Date('January 15, 2020') : "+date3+"<br>";
+                area3.innerHTML += "Date('January 15, 2020 15:20:20') : "+date4+"<br>";
+                area3.innerHTML += "Date(2019,3,15,19,25,30) : "+date5+"<br>";
+
+                area3.innerHTML += "<br><b>Date 메소드</b><br>";
+                area3.innerHTML += "getFullYear() : "+date1.getFullYear()+"<br>";
+                area3.innerHTML += "getMonth() : "+date1.getMonth()+"<br>";
+                    // 월은 0부터
+                area3.innerHTML += "getDate() : "+date1.getDate()+"<br>";
+                area3.innerHTML += "getHours() : "+date1.getHours()+"<br>";
+                area3.innerHTML += "getMinutes() : "+date1.getMinutes()+"<br>";
+                area3.innerHTML += "getSeconds() : "+date1.getSeconds()+"<br>";
+                area3.innerHTML += "getMilliseconds() : "+date1.getMilliseconds()+"<br>";
+                // getTime() : 1970년 1월1일 자정부터 현재까지의 시간을 밀리초단위로 환산
+                area3.innerHTML += "getTime() : "+date1.getTime()+"<br>";
+
+                // 날짜 설정
+                date1.setFullYear(2019);
+                area3.innerHTML += "getFullYear() : "+date1.getFullYear()+"<br>";
+
+                // 날짜 사이의 간격 구하기
+                area3.innerHTML += "<br><b>날짜 간격 구하기</b><br>";
+                var start = new Date(2020,11,21);
+                var now = new Date();
+
+                var interval1 = now.getTime() - start.getTime();
+                // 밀리초를 일 수로 계산
+                var interval2 = Math.floor(interval1 / (1000*60*60*24));
+                area3.innerHTML += "개강일부터 현재까지 일수 : "+interval2+"<br>";
+            }
+        </script>
+    </body>
+</html>

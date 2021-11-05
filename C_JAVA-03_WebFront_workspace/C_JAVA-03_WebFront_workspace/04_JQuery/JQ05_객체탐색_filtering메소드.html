@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>객체탐색1</title>
+        <meta charset="UTF-8">
+        <script src="../resources/dev/jquery-3.6.0.min.js"></script>
+        <script>
+            $(function(){
+                // h3 태그 중 짝수 인덱스 : 선택자로 지정
+                $('h3:even').css('background','orange');
+                // h3 태그 중 짝수 인덱스 : 필터링 메소드로 지정
+                $('h3').filter(':even').css('color','white');
+
+                // 선택된 요소 중 제일 처음에 있는 요소 리턴
+                $('h3').first().css("font-size","2em");
+                // 선택된 요소 중 제일 마지막에 있는 요소 리턴
+                $('h3').last().text("마지막요소");
+                // 인덱스 번호와 일치하는 요소만 리턴
+                $('h3').eq(3).text("eq(3)으로 선택됨");
+                // 인자값과 일치하지 않는 요소만 리턴
+                $('h3').not(".test").css('font-style','italic');
+
+                // 함수를 매개변수로 하는 filter()메소드 사용
+                $('h3').filter(function(index){
+                    return index % 2 == 1;
+                }).css({'background':'yellowgreen','color':'white'});
+            });
+        </script>
+    </head>
+    <body>
+        <h1>객체 탐색 - filtering 메소드</h1>
+        <hr>
+        <h3 class="test">test-1</h3>
+        <h3 class="test">test-2</h3>
+        <h3 class="test">test-3</h3>
+        <h3 class="test">test-4</h3>
+        <h3>test-5</h3>
+        <h3 class="test">test-6</h3>
+    </body>
+</html>

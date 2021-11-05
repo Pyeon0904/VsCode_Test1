@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML태그접근2</title>
+        <meta charset="UTF-8">
+        <style>
+            div { width: 500px; height:100px;
+                border: 1px solid black;
+                background-color: #1111;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>HTML 태그 접근 - form 요소 접근</h1>
+        <hr>
+        <h2>input 태그 값 활용</h2>
+        <form action="#">
+            이름 : <input type="text" name="u_name" id="u_name"><br>
+            <button onclick="test1();">제출</button>
+        </form>
+        <div id="div1"></div>
+        <script>
+            function test1(){
+                var name = document.getElementById("u_name");
+                var d1 = document.getElementById("div1");
+                d1.innerHTML = name.value;
+                name.value="입력완료";
+            }
+        </script>
+        <button onclick="test2();">변경</button>
+        <script>
+            function test2(){
+                var name = document.getElementById("u_name");
+                name.placeholder="안녕하세요";
+                name.size = 40;
+                name.type="password";
+            }
+        </script>
+        <hr>
+        <h2>체크박스 값 활용</h2>
+        <input type="checkbox" name="hobby" value="game" id="game"><label for="game">게임</label>
+        <input type="checkbox" name="hobby" value="music" id="music"><label for="music">음악감상</label>
+        <input type="checkbox" name="hobby" value="movie" id="movie"><label for="movie">영화보기</label>
+        <button onclick="test3();">제출</button>
+        <div id="div2"></div>
+        <script>
+            function test3(){
+                var hobby = document.getElementsByName("hobby");
+                var result = "";
+                for(var i=0; i < hobby.length; i++){
+                    if(hobby[i].checked == true){
+                        result += hobby[i].value+"<br>";
+                    }
+                }
+                // var d2 = document.getElementById("div2");
+                // d2.innerHTML = result;
+                document.getElementById("div2").innerHTML = result;
+            }
+        </script>
+
+        <hr>
+        <h2>HTML 요소에 스타일 지정</h2>
+        <div id="div3"></div>
+        <script>
+            var d3 = document.getElementById("div3");
+            d3.style.backgroundColor = "red";
+        </script>
+        아이디 : <input type="text" name="u_id" id="u_id">
+        <button onclick="test4();">제출</button>
+        <script>
+            function test4(){
+                var id = document.getElementById("u_id");
+                if(id.value == "admin"){
+                    id.style.backgroundColor = "red";
+                    id.value = "금지!";
+                }else {
+                    id.style.backgroundColor = "blue";
+                }
+            }
+        </script>
+    </body>
+</html>

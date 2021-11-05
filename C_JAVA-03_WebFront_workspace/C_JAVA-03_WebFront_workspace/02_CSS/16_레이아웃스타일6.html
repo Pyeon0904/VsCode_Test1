@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>테이블스타일</title>
+        <meta charset="UTF-8">
+        <style>
+            table {
+                width: 300px;
+                height: 400px;
+                border: 1px solid black;
+                /* 테이블 캡션 위치 지정 */
+                caption-side: bottom;
+                /* 테두리 합쳐서 하나로 표시 */
+                /* border-collapse:collapse; */
+                /* 테두리 두개로 표시(기본값) */
+                border-collapse: separate;
+                /* 셀 간격 지정 */
+                border-spacing:50px 30px;
+                /* 빈셀 표시 안하기 */
+                empty-cells: hide;
+                /* 셀 크기 고정 */
+                table-layout: fixed;
+                /* 셀 내용 가두기 */
+                word-break:break-all;
+            }
+            table td {
+                width: 80px;
+                border: 1px solid black;
+                text-align: center;
+                /* 세로 정렬 */
+                vertical-align: top;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>테이블 스타일</h1>
+        <hr>
+        <table>
+            <caption>성적표</caption>
+            <tr>
+                <td>구분</td>
+                <td>점수</td>
+            </tr>
+            <tr>
+                <td>국어</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>영어</td>
+                <td>50</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>영어공부좀해야하는데...언제하지..?
+                    하하하하하하하하하하하하하하하하하하하
+                    하하하ㅏ하하gkgkgkgkgkgkkqkqkqkqkdjsfkljalskjdfla;s</td>
+            </tr>
+        </table>
+    </body>
+</html>

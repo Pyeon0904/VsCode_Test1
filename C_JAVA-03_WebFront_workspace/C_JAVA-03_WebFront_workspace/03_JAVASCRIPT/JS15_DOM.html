@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM</title>
+        <meta charset="UTF-8">
+        <style>
+            .area{
+                height: 300px;
+                background-color: lightgray;
+                border:1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>DOM(Document Object Model)</h1>
+        <hr>
+        <h2>노드 생성</h2>
+        <h3>텍스트 노드가 있는 노드 생성</h3>
+        <button onclick="test1();">실행 확인</button>
+        <div id="area1" class="area"></div>
+        <script>
+            function test1(){
+                // 요소 노드 생성
+                var elementNode = document.createElement("h3");
+                // 텍스트 노드 생성
+                var textNode = document.createTextNode("안녕하세요~!");
+
+                // 요소 노드와 텍스트 노드를 연결
+                elementNode.appendChild(textNode);
+
+                // body에 있는 요소에 요소 노드 추가
+                document.getElementById("area1").appendChild(elementNode);
+
+                // 위 작업들은 기존방법으로 사용하면
+                document.getElementById("area1").innerHTML += "<h3>반가워요~!</h3>";
+            }
+        </script>
+
+        <h3>텍스트 노드가 없는 노드 생성</h3>
+        <button onclick="test2();">실행 확인</button>
+        <div id="area2" class="area"></div>
+        <script>
+            function test2(){
+                // 요소 노드 생성
+                var elementNode = document.createElement("img");
+
+                // 요소 속성 지정
+                elementNode.src = "../resources/images/city1.PNG";
+                elementNode.width = "150";
+
+                // body에 있는 요소에 요소 노드 추가
+                document.getElementById("area2").appendChild(elementNode);
+
+                // 위 작업들을 기존 방법으로 사용하면
+                document.getElementById("area2").innerHTML 
+                    += "<img src='../resources/images/flower1.PNG' width='150'>";
+            }
+        </script>     
+        
+        <hr>
+        <h2>스타일 지정</h2>
+        <button onclick="test3();">실행 확인</button>
+        <div id="area3" class="area"></div>
+        <script>
+            function test3(){
+                var area3 = document.getElementById("area3");
+
+                area3.style.backgroundColor = "orangered";
+                area3.style.borderRadius = "50px";
+                area3.style.transition = "all 2s";
+            }
+        </script>
+
+        <hr>
+        <h2>노드 삭제</h2>
+        <button onclick="test4();">실행 확인</button>
+        <div id="area4" class="area"></div>
+        <script>
+            function test4(){
+                var area4 = document.getElementById("area4");
+
+                area4.remove();
+
+                // 한줄로 사용
+                // document.getElementById("area4").remove();
+            }
+        </script>
+    </body>
+</html>

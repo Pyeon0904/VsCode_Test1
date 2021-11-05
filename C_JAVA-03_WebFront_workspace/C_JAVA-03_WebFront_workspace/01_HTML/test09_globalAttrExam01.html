@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>전역속성 실습</title>
+        <meta charset="UTF-8">
+
+        <style>
+            #top_logo {
+                color:red;
+            }
+            .top {
+                text-align: center;
+            }
+            .menu {
+                text-align: right;
+            }
+            .gray {
+                background-color: gray;
+                color:white;
+            }
+            #banner {
+                color:blue;
+                font-size: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <header id="top_logo" class="main top">
+            <h1 title="어서오세요">KH 정보교육원</h1>
+        </header>
+        <nav class="menu gray">
+            홈 | 게시판 | 로그인 | 회원가입
+        </nav>
+        <section>
+            <div id="banner" class="top">KH 정보교육원에 오신것을 환영합니다.</div>
+            <div id="intro" hidden>학원 소개글이 여기 들어올꺼예요~~</div>
+        </section>
+        <footer class="gray" style="color:darkgray;">
+            Posted by : khacademy
+        </footer>
+    </body>
+</html>

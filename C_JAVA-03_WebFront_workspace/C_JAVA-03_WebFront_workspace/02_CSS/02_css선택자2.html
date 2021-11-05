@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CSS 선택자2 </title>
+        <meta charset="UTF-8">
+        <style>
+            /* 기본 속성 선택자 */
+            div[name=name2] { color: orangered;}
+
+            /* 문자열 속성 선택자 */
+            div[name~=name1] { color : green;}
+            div[class|=class] { color: pink;}
+            div[name^=name] { background-color: yellow;}
+            div[class$=class] { font-size : 20px;}
+            div[class*=div] { border: 1px solid; }
+
+            /* 후손 선택자와 자손 선택자 */
+            #test1>h4 { color: blue;}
+            #test1 h4 { background-color: yellow;}
+            #test1 li { background-color: purple;}
+            #test1>#testul>li { color: white;}
+
+            /* 동위 선택자 */
+            #div-test1 + div { background-color: purple;}
+            #div-test3 ~ div { background-color: blue;}
+            #div-test1 + div + div { background-color: yellow;}
+
+            /* 반응 선택자 */
+            #active-test, #hover-test {
+                width: 300px;
+                height: 100px;
+            }
+            #active-test:active {
+                background-color: yellow;
+            }
+            #hover-test:hover {
+                background-color: green;
+            }
+
+            /* 상태 선택자 */
+            input[type='checkbox']:checked { width:20px; height:20px;}
+
+            #u_id:focus, #u_pw:focus { background-color: red; }
+
+            option:disabled { background-color: black; color:white;}
+            option:enabled { background-color: yellow;}
+        </style>
+    </head>
+    <body>
+        <h2>기본 속성 선택자</h2>
+        <p>기본 선택자 뒤에 [](대괄호)를 사용하여 속성과 속성값을 사용해서 선택</p>
+        <pre> 선택자[속성=속성값] { CSS설정내용; }</pre>
+        <div name="name1" class="div-class">div1</div>
+        <div name="name2" class="div-class">div2</div>
+        <div name="name3" class="div-class">div3</div>
+        <div name="name4" class="class-div">div4</div>
+
+        <hr>
+        <h2>후손선택자와 자손선택자</h2>
+        <p>
+            자손 선택자 : 바로 아래 요소<br>
+            후손 선택자 : 하위 모든 요소<br>
+        </p>
+        <pre> 자손선택자 : 선택자 > 자손선택자 { 설정내용; } </pre>
+        <pre> 후손선택자 : 선택자  후손선택자 { 설정내용; } </pre>
+        
+        <div id="test1">
+            <h4>자손입니다.</h4>
+            <h4>나도 자손입니다.</h4>
+            <ul id="testul">
+                <h4>리스트</h4>
+                <li>ul의 자손이면서 div의 후손입니다.</li>
+                <li>나도 ul의 자손이면서 div의 후손입니다.</li>
+            </ul>
+        </div>
+
+        <hr>
+        <h2>동위선택자</h2>
+        <p>동위 관계에서 뒤에 위치한 태그를 선택</p>
+        <pre>바로 뒤의 요소 선택 : 선택자a + 선택자b { 설정내용; }</pre>
+        <pre>뒤에 있는 모든 요소 선택 : 선택자a ~ 선택자b { 설정내용; }</pre>
+
+        <div id="div-test1">div test1</div>
+        <div id="div-test2">div test2</div>
+        <div id="div-test3">div test3</div>
+        <div id="div-test4">div test4</div>
+        <div id="div-test5">div test5</div>
+
+        <hr>
+        <h2>반응선택자</h2>
+        <p>사용자의 움직임에 따라 달라지는 선택자</p>
+        <pre>사용자가 클릭한 태그 - 선택자:active { 설정내용; }</pre>
+        <pre>마우스가 올라가있는 태그 - 선택자:hover { 설정내용; }</pre>
+
+        <div id="active-test">active테스트</div>
+        <div id="hover-test">hover테스트</div>
+
+        <hr>
+        <h2>상태선택자</h2>
+        <p>입력양식의 상태에 따라 선택되는 선택자</p>
+        <pre>체크 상태의 input 태그 선택 - input태그:checked { 설정내용; }</pre>
+        <input type="checkbox" id="apple" name="fruits" value="사과">사과
+        <input type="checkbox" id="banana" name="fruits" value="바나나">바나나
+        <input type="checkbox" id="orange" name="fruits" value="오렌지">오렌지
+        <br>
+        <pre>초점이 맞춰진 input 태그 선택 - input태그:focus { 설정내용;}</pre>
+        아이디 : <input type="text" name="u_id" id="u_id"><br>
+        비밀번호 : <input type="password" name="u_pw" id="u_pw">
+        <br>
+        <pre>사용가능한 input태그 선택 - input태그:enabled { 설정내용;} </pre>
+        <pre>사용불가능한 input태그 선택 - input태그:disabled { 설정내용;} </pre>
+        <select>
+            <option value="10">10대</option>
+            <option value="20">20대</option>
+            <option value="30">30대</option>
+            <option value="40" disabled>40대</option>
+        </select>
+        
+    </body>
+</html>

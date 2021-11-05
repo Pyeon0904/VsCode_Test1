@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>트랜지션</title>
+        <meta charset="UTF-8">
+        <style>
+            div { 
+                width: 100px; 
+                height: 100px; 
+                background-color: red;
+                border: 1px solid black;
+            }
+
+            .trans1:hover {
+                background-color: yellow;
+                transition-duration: 2s;
+            }
+
+            .trans2:hover {
+                width: 200px;
+                height: 200px;
+                transform: rotateZ(200deg);
+                background-color: yellow;
+                transition-property: background-color, transform, width, height;
+                transition-duration: 5s, 10s, 1s, 2s;
+            }
+            .trans3:hover {
+                background-color: yellow;
+                transition-duration: 3s;
+                transition-delay: 2s;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>트랜지션</h1>
+        <p>시간에 따라 웹 요소의 스타일 속성이 조금씩 바뀌는 것</p>
+        <hr>
+        <h3>트랜지션 진행 시간 지정</h3>
+        <p>transition-duration:시간</p>
+        <div class="trans1"></div>
+
+        <h3>트랜지션 진행별 시간 설정</h3>
+        <p>
+            transition-property:적용속성,...; <br>
+            transition-duration:시간,...;
+        </p>
+        <div class="trans2"></div>
+
+        <h3>트랜지션 시간 지연하기</h3>
+        <p>transition-delay:시간</p>
+        <div class="trans3"></div>
+    </body>
+</html>

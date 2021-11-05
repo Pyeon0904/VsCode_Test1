@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>데이터입출력</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>데이터 입출력</h1>
+        <hr>
+        <h2>데이터 출력</h2>
+        <h3>document.write()</h3>
+        <p>브라우저 화면 상의 페이지에 값 출력</p>
+        <script>
+            document.write("문서에 출력됩니다.<br>");            
+            document.write("다음줄에 내용을 적을게요~!<br>");
+            document.write("<b>화면</b>에 구현하고 싶은 다양한 <u>HTML 태그</u>를 여기에 작성하시면됩니다~!");
+        </script>
+
+        <h3>window.alert()</h3>
+        <p>내용을 메시지 창에 출력</p>
+        <script>
+            window.alert("메시지 박스에 내용이 출력됩니다.");
+            alert("window. 은 생락이 가능합니다.");
+        </script>
+
+        <h3>innerHTML</h3>
+        <p>HTML 요소의 내용을 변경해서 출력</p>
+        <div id="div1" style="width:200px;height:50px;border:1px solid black;">
+            HTML의 div 영역입니다.
+        </div>
+        <script>
+            document.getElementById("div1").innerHTML = "div1 내용을 바꿔주세요~!";
+            function change(){
+                document.getElementById("div1").innerHTML = "다시 이걸로 바꿔~!";
+            }
+        </script>
+        <button onclick="change();">버튼 클릭</button>
+
+        <h3>console.log()</h3>
+        <p>개발자 도구 화면의 콘솔에 출력</p>
+        <script>
+            console.log("개발자 도구에 출력됩니다~!");
+        </script>
+
+        <hr>
+        <h2>데이터 입력</h2>
+        <h3>window.confirm()</h3>
+        <p>대화창에 메시지와 확인/취소 버튼 표시</p>
+        <script>
+            var conf = confirm("자바스크립트 공부 재밌나요??");
+            document.write("<br>반환값 : "+conf);
+        </script>
+
+        <h3>window.prompt()</h3>
+        <p>대화창에 텍스트필드와 확인/취소 버튼 표시</p>
+        <script>
+            var prom = prompt("어떤 공부를 하고 싶으세요??");
+            document.write("<br>반환값 : "+prom);
+        </script>
+    </body>
+</html>
